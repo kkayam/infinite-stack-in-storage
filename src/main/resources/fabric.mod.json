@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "storagesolution",
+  "version": "${version}",
+  "name": "Storage Solution",
+  "description": "Identical items stack without limit inside chests, barrels, shulker boxes and ender chests. Taken out, they stack normally.",
+  "authors": [
+    "kkayam"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.kkayam.storagesolution.StorageSolution"
+    ],
+    "client": [
+      "dev.kkayam.storagesolution.StorageSolutionClient"
+    ]
+  },
+  "mixins": [
+    "storagesolution.mixins.json",
+    {
+      "config": "storagesolution.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "icon": "assets/storagesolution/icon.png",
+  "contact": {
+    "homepage": "https://modrinth.com/mod/storage-solution",
+    "sources": "https://github.com/kkayam/storage-solution",
+    "issues": "https://github.com/kkayam/storage-solution/issues"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "storagesolution_gametest",
+  "version": "1.0.0",
+  "name": "Storage Solution Game Tests",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-gametest": [
+      "dev.kkayam.storagesolution.gametest.StorageSolutionGameTests"
+    ],
+    "main": [
+      "dev.kkayam.storagesolution.gametest.TestCommand"
+    ]
+  },
+  "depends": {
+    "storagesolution": "*"
+  }
+}
