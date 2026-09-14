@@ -1,4 +1,4 @@
-package dev.kkayam.storagesolution;
+package dev.kkayam.infinitestack;
 
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
@@ -17,7 +17,7 @@ import java.util.List;
  * ServerPlayerEntity.onScreenHandlerOpened, i.e. after the open-screen packet and before the contents.
  */
 public final class StorageNetworking {
-    public static final Identifier INFINITE_SLOTS = new Identifier(StorageSolution.MOD_ID, "infinite_slots");
+    public static final Identifier INFINITE_SLOTS = new Identifier(InfiniteStack.MOD_ID, "infinite_slots");
 
     private StorageNetworking() {}
 

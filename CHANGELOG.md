@@ -7,4 +7,4 @@ Initial release for Fabric 1.20.1.
 - Tools and armour with identical durability and enchantments stack too.
 - Hoppers and droppers keep feeding oversized stacks.
 - Slot labels above 999 are abbreviated (1.5k, 20k, 1.2M); the tooltip shows the exact count.
-- Config: `config/storagesolution.json` to include or exclude container types.
+- Config: `config/infinitestack.json` to include or exclude container types.

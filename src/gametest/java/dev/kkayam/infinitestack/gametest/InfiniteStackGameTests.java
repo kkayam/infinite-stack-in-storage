@@ -1,4 +1,4 @@
-package dev.kkayam.storagesolution.gametest;
+package dev.kkayam.infinitestack.gametest;
 
 import net.fabricmc.fabric.api.gametest.v1.FabricGameTest;
 import net.minecraft.test.GameTest;
@@ -7,7 +7,7 @@ import net.minecraft.test.TestContext;
 import net.minecraft.util.math.BlockPos;
 
 /** Dev-environment entry: ./gradlew runGametest. Production servers use the /sstest command instead. */
-public class StorageSolutionGameTests {
+public class InfiniteStackGameTests {
     private static void run(TestContext ctx, int index) {
         try {
             ClickTests.TESTS.get(index).accept(ClickTests.setup(ctx.getWorld(), ctx.getAbsolutePos(new BlockPos(1, 1, 1))));

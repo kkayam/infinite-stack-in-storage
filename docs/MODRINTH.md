@@ -1,4 +1,4 @@
-# Storage Solution
+# Infinite Stack in Storage
 
 **One slot, unlimited items.** Put identical items into a chest and they merge into a single stack, no matter how many. Take them out and they behave exactly like vanilla again.
 
@@ -27,7 +27,7 @@ Counts above 999 are shown abbreviated in the slot (1.5k, 20k, 1.2M). Hover for 
 
 ## Config
 
-`config/storagesolution.json`
+`config/infinitestack.json`
 
 ```json
 {
@@ -51,4 +51,4 @@ Counts above 127 are saved in an extra NBT tag. If you remove the mod, worlds st
 
 ## Links
 
-Source code and issue tracker: https://github.com/kkayam/storage-solution
+Source code and issue tracker: https://github.com/kkayam/infinite-stack-in-storage

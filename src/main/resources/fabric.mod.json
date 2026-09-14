@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "storagesolution",
+  "id": "infinitestack",
   "version": "${version}",
-  "name": "Storage Solution",
+  "name": "Infinite Stack in Storage",
   "description": "Identical items stack without limit inside chests, barrels, shulker boxes and ender chests. Taken out, they stack normally.",
   "authors": [
     "kkayam"
@@ -11,16 +11,16 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.kkayam.storagesolution.StorageSolution"
+      "dev.kkayam.infinitestack.InfiniteStack"
     ],
     "client": [
-      "dev.kkayam.storagesolution.StorageSolutionClient"
+      "dev.kkayam.infinitestack.InfiniteStackClient"
     ]
   },
   "mixins": [
-    "storagesolution.mixins.json",
+    "infinitestack.mixins.json",
     {
-      "config": "storagesolution.client.mixins.json",
+      "config": "infinitestack.client.mixins.json",
       "environment": "client"
     }
   ],
@@ -30,10 +30,10 @@
     "java": ">=17",
     "fabric-api": "*"
   },
-  "icon": "assets/storagesolution/icon.png",
+  "icon": "assets/infinitestack/icon.png",
   "contact": {
-    "homepage": "https://modrinth.com/mod/storage-solution",
-    "sources": "https://github.com/kkayam/storage-solution",
-    "issues": "https://github.com/kkayam/storage-solution/issues"
+    "homepage": "https://modrinth.com/mod/infinite-stack-in-storage",
+    "sources": "https://github.com/kkayam/infinite-stack-in-storage",
+    "issues": "https://github.com/kkayam/infinite-stack-in-storage/issues"
   }
 }

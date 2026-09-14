@@ -1,4 +1,4 @@
-package dev.kkayam.storagesolution;
+package dev.kkayam.infinitestack;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
@@ -11,7 +11,7 @@ import net.minecraft.util.Formatting;
 
 import java.text.NumberFormat;
 
-public final class StorageSolutionClient implements ClientModInitializer {
+public final class InfiniteStackClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         // Slot labels are abbreviated above 999 (see DrawContextMixin); show the exact count in the tooltip.
@@ -35,7 +35,7 @@ public final class StorageSolutionClient implements ClientModInitializer {
                     if (index < 0 || index >= screenHandler.slots.size()) continue;
                     Slot slot = screenHandler.slots.get(index);
                     if (!(slot.inventory instanceof PlayerInventory) && slot.inventory instanceof InfiniteInventory infinite) {
-                        infinite.storagesolution$markInfinite();
+                        infinite.infinitestack$markInfinite();
                     }
                 }
             });

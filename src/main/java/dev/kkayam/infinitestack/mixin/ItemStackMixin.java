@@ -1,4 +1,4 @@
-package dev.kkayam.storagesolution.mixin;
+package dev.kkayam.infinitestack.mixin;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -17,13 +17,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  */
 @Mixin(ItemStack.class)
 public abstract class ItemStackMixin {
-    private static final String BIG_COUNT = "storagesolution:count";
+    private static final String BIG_COUNT = "infinitestack:count";
+    /** Tag written by builds of this mod before it was renamed. */
+    private static final String LEGACY_BIG_COUNT = "storagesolution:count";
 
     @Shadow private int count;
     @Shadow public abstract int getMaxCount();
 
     @Inject(method = "writeNbt", at = @At("RETURN"))
-    private void storagesolution$writeBigCount(NbtCompound nbt, CallbackInfoReturnable<NbtCompound> cir) {
+    private void infinitestack$writeBigCount(NbtCompound nbt, CallbackInfoReturnable<NbtCompound> cir) {
         if (this.count > Byte.MAX_VALUE) {
             nbt.putByte("Count", (byte) Math.min(this.count, this.getMaxCount()));
             nbt.putInt(BIG_COUNT, this.count);
@@ -31,9 +33,11 @@ public abstract class ItemStackMixin {
     }
 
     @Inject(method = "<init>(Lnet/minecraft/nbt/NbtCompound;)V", at = @At("RETURN"))
-    private void storagesolution$readBigCount(NbtCompound nbt, CallbackInfo ci) {
+    private void infinitestack$readBigCount(NbtCompound nbt, CallbackInfo ci) {
         if (nbt.contains(BIG_COUNT, NbtElement.INT_TYPE)) {
             this.count = nbt.getInt(BIG_COUNT);
+        } else if (nbt.contains(LEGACY_BIG_COUNT, NbtElement.INT_TYPE)) {
+            this.count = nbt.getInt(LEGACY_BIG_COUNT);
         }
     }
 }

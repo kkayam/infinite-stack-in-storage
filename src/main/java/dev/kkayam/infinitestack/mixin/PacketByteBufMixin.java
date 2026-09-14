@@ -1,4 +1,4 @@
-package dev.kkayam.storagesolution.mixin;
+package dev.kkayam.infinitestack.mixin;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
@@ -21,7 +21,7 @@ public abstract class PacketByteBufMixin {
 
     @Redirect(method = "writeItemStack", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/network/PacketByteBuf;writeByte(I)Lio/netty/buffer/ByteBuf;"))
-    private io.netty.buffer.ByteBuf storagesolution$writeCount(PacketByteBuf buf, int count) {
+    private io.netty.buffer.ByteBuf infinitestack$writeCount(PacketByteBuf buf, int count) {
         if (count > Byte.MAX_VALUE) {
             buf.writeByte(BIG_COUNT_MARKER);
             return this.writeVarInt(count);
@@ -31,7 +31,7 @@ public abstract class PacketByteBufMixin {
 
     @ModifyVariable(method = "readItemStack", at = @At(value = "INVOKE_ASSIGN",
             target = "Lnet/minecraft/network/PacketByteBuf;readByte()B"))
-    private int storagesolution$readCount(int count) {
+    private int infinitestack$readCount(int count) {
         return count == BIG_COUNT_MARKER ? this.readVarInt() : count;
     }
 }

@@ -1,4 +1,4 @@
-package dev.kkayam.storagesolution;
+package dev.kkayam.infinitestack;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Which block-entity containers stack without limit. Saved to config/storagesolution.json.
+ * Which block-entity containers stack without limit. Saved to config/infinitestack.json.
  * <p>
  * By default every container that extends vanilla's LootableContainerBlockEntity qualifies, which covers
  * chests, barrels, shulker boxes and most modded chests (Iron Chests, Supplementaries sacks and safes, ...),
@@ -39,7 +39,7 @@ public final class StorageConfig {
     }
 
     public static void load() {
-        Path path = FabricLoader.getInstance().getConfigDir().resolve(StorageSolution.MOD_ID + ".json");
+        Path path = FabricLoader.getInstance().getConfigDir().resolve(InfiniteStack.MOD_ID + ".json");
         StorageConfig loaded = new StorageConfig();
         try {
             if (Files.exists(path)) {
@@ -49,7 +49,7 @@ public final class StorageConfig {
             Files.createDirectories(path.getParent());
             Files.writeString(path, GSON.toJson(loaded));
         } catch (IOException | RuntimeException e) {
-            StorageSolution.LOGGER.error("Could not read {}; using defaults", path, e);
+            InfiniteStack.LOGGER.error("Could not read {}; using defaults", path, e);
         }
         loaded.includedIds = parse(loaded.included);
         loaded.excludedIds = parse(loaded.excluded);
@@ -60,7 +60,7 @@ public final class StorageConfig {
         Set<Identifier> out = new HashSet<>();
         if (ids != null) for (String s : ids) {
             Identifier id = Identifier.tryParse(s);
-            if (id == null) StorageSolution.LOGGER.warn("Ignoring invalid container id '{}' in config", s);
+            if (id == null) InfiniteStack.LOGGER.warn("Ignoring invalid container id '{}' in config", s);
             else out.add(id);
         }
         return out;

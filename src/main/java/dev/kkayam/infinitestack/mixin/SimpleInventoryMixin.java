@@ -1,7 +1,7 @@
-package dev.kkayam.storagesolution.mixin;
+package dev.kkayam.infinitestack.mixin;
 
-import dev.kkayam.storagesolution.InfiniteInventory;
-import dev.kkayam.storagesolution.InfiniteStorage;
+import dev.kkayam.infinitestack.InfiniteInventory;
+import dev.kkayam.infinitestack.InfiniteStorage;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,15 +14,15 @@ import org.spongepowered.asm.mixin.Unique;
  */
 @Mixin(SimpleInventory.class)
 public abstract class SimpleInventoryMixin implements InfiniteInventory, Inventory {
-    @Unique private boolean storagesolution$infinite;
+    @Unique private boolean infinitestack$infinite;
 
     @Override
-    public void storagesolution$markInfinite() {
-        this.storagesolution$infinite = true;
+    public void infinitestack$markInfinite() {
+        this.infinitestack$infinite = true;
     }
 
     @Override
     public int getMaxCountPerStack() {
-        return this.storagesolution$infinite ? InfiniteStorage.INFINITE : Inventory.MAX_COUNT_PER_STACK;
+        return this.infinitestack$infinite ? InfiniteStorage.INFINITE : Inventory.MAX_COUNT_PER_STACK;
     }
 }

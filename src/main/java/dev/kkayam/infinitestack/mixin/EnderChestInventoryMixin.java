@@ -1,6 +1,6 @@
-package dev.kkayam.storagesolution.mixin;
+package dev.kkayam.infinitestack.mixin;
 
-import dev.kkayam.storagesolution.InfiniteStorage;
+import dev.kkayam.infinitestack.InfiniteStorage;
 import net.minecraft.inventory.EnderChestInventory;
 import net.minecraft.inventory.Inventory;
 import org.spongepowered.asm.mixin.Mixin;

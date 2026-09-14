@@ -1,4 +1,4 @@
-package dev.kkayam.storagesolution.gametest;
+package dev.kkayam.infinitestack.gametest;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.block.Block;

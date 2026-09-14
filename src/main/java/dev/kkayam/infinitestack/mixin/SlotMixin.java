@@ -1,6 +1,6 @@
-package dev.kkayam.storagesolution.mixin;
+package dev.kkayam.infinitestack.mixin;
 
-import dev.kkayam.storagesolution.InfiniteStorage;
+import dev.kkayam.infinitestack.InfiniteStorage;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
@@ -20,7 +20,7 @@ public abstract class SlotMixin {
 
     /** Storage slots accept any amount of a stack, regardless of the item's own max count. */
     @Inject(method = "getMaxItemCount(Lnet/minecraft/item/ItemStack;)I", at = @At("HEAD"), cancellable = true)
-    private void storagesolution$unlimitedPerStack(ItemStack stack, CallbackInfoReturnable<Integer> cir) {
+    private void infinitestack$unlimitedPerStack(ItemStack stack, CallbackInfoReturnable<Integer> cir) {
         if (InfiniteStorage.isInfinite(this.inventory)) {
             cir.setReturnValue(InfiniteStorage.INFINITE);
         }
@@ -31,7 +31,7 @@ public abstract class SlotMixin {
      * Covers takeStackRange() too, which delegates here.
      */
     @ModifyVariable(method = "tryTakeStackRange", at = @At("HEAD"), argsOnly = true, ordinal = 1)
-    private int storagesolution$capTakenAmount(int max, int min, int ignored, PlayerEntity player) {
+    private int infinitestack$capTakenAmount(int max, int min, int ignored, PlayerEntity player) {
         if (InfiniteStorage.isInfinite(this.inventory)) {
             return Math.min(max, InfiniteStorage.normalMax(this.getStack()));
         }

@@ -1,6 +1,6 @@
-package dev.kkayam.storagesolution.mixin;
+package dev.kkayam.infinitestack.mixin;
 
-import dev.kkayam.storagesolution.InfiniteStorage;
+import dev.kkayam.infinitestack.InfiniteStorage;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
 import net.minecraft.inventory.Inventory;

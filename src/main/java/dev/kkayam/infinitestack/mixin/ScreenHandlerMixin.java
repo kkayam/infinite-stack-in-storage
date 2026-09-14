@@ -1,6 +1,6 @@
-package dev.kkayam.storagesolution.mixin;
+package dev.kkayam.infinitestack.mixin;
 
-import dev.kkayam.storagesolution.InfiniteStorage;
+import dev.kkayam.infinitestack.InfiniteStorage;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
@@ -27,7 +27,7 @@ public abstract class ScreenHandlerMixin {
      * that cannot fit stays in {@code stack}.
      */
     @Inject(method = "insertItem", at = @At("HEAD"), cancellable = true)
-    private void storagesolution$insertItem(ItemStack stack, int startIndex, int endIndex, boolean fromLast,
+    private void infinitestack$insertItem(ItemStack stack, int startIndex, int endIndex, boolean fromLast,
                                             CallbackInfoReturnable<Boolean> cir) {
         boolean moved = false;
 
@@ -67,7 +67,7 @@ public abstract class ScreenHandlerMixin {
      * swapping the cursor with a slot, and hotbar-swapping (number keys / F).
      */
     @Inject(method = "internalOnSlotClick", at = @At("HEAD"), cancellable = true)
-    private void storagesolution$guardOversizedMoves(int slotIndex, int button, SlotActionType actionType,
+    private void infinitestack$guardOversizedMoves(int slotIndex, int button, SlotActionType actionType,
                                                      PlayerEntity player, CallbackInfo ci) {
         if (slotIndex < 0 || slotIndex >= this.slots.size()) return;
         Slot slot = this.slots.get(slotIndex);

@@ -1,6 +1,6 @@
-package dev.kkayam.storagesolution.mixin.client;
+package dev.kkayam.infinitestack.mixin.client;
 
-import dev.kkayam.storagesolution.InfiniteStorage;
+import dev.kkayam.infinitestack.InfiniteStorage;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.item.ItemStack;
@@ -14,7 +14,7 @@ public abstract class DrawContextMixin {
     @ModifyVariable(
             method = "drawItemInSlot(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/item/ItemStack;IILjava/lang/String;)V",
             at = @At("HEAD"), argsOnly = true)
-    private String storagesolution$abbreviateCount(String countOverride, TextRenderer textRenderer, ItemStack stack) {
+    private String infinitestack$abbreviateCount(String countOverride, TextRenderer textRenderer, ItemStack stack) {
         if (countOverride == null && stack.getCount() > 999) {
             return InfiniteStorage.abbreviate(stack.getCount());
         }

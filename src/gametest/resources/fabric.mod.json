@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "id": "storagesolution_gametest",
+  "id": "infinitestack_gametest",
   "version": "1.0.0",
-  "name": "Storage Solution Game Tests",
+  "name": "Infinite Stack in Storage Game Tests",
   "environment": "*",
   "entrypoints": {
     "fabric-gametest": [
-      "dev.kkayam.storagesolution.gametest.StorageSolutionGameTests"
+      "dev.kkayam.infinitestack.gametest.InfiniteStackGameTests"
     ],
     "main": [
-      "dev.kkayam.storagesolution.gametest.TestCommand"
+      "dev.kkayam.infinitestack.gametest.TestCommand"
     ]
   },
   "depends": {
-    "storagesolution": "*"
+    "infinitestack": "*"
   }
 }

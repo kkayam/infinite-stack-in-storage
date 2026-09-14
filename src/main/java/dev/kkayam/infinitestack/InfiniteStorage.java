@@ -1,4 +1,4 @@
-package dev.kkayam.storagesolution;
+package dev.kkayam.infinitestack;
 
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.LootableContainerBlockEntity;

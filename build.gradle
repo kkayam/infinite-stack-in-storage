@@ -71,7 +71,7 @@ publishMods {
     file = remapJar.archiveFile
     changelog = providers.fileContents(layout.projectDirectory.file("CHANGELOG.md")).asText
     type = STABLE
-    displayName = "Storage Solution ${project.mod_version} for ${project.minecraft_version}"
+    displayName = "Infinite Stack in Storage ${project.mod_version} for ${project.minecraft_version}"
     modLoaders.add("fabric")
 
     modrinth {

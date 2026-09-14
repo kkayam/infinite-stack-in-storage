@@ -1,6 +1,6 @@
-package dev.kkayam.storagesolution.mixin;
+package dev.kkayam.infinitestack.mixin;
 
-import dev.kkayam.storagesolution.StorageNetworking;
+import dev.kkayam.infinitestack.StorageNetworking;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ServerPlayerEntity.class)
 public abstract class ServerPlayerEntityMixin {
     @Inject(method = "onScreenHandlerOpened", at = @At("HEAD"))
-    private void storagesolution$announceInfiniteSlots(ScreenHandler handler, CallbackInfo ci) {
+    private void infinitestack$announceInfiniteSlots(ScreenHandler handler, CallbackInfo ci) {
         StorageNetworking.sendInfiniteSlots((ServerPlayerEntity) (Object) this, handler);
     }
 }
